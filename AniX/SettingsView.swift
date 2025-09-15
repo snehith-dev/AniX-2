@@ -63,7 +63,17 @@ struct AccountView: View {
                 .buttonStyle(.borderedProminent)
             } else {
                 if isLoggingIn {
-                    ProgressView("Waiting for login...")
+                    VStack {
+                        ProgressView("Opening AniList...")
+                        Text("Please complete login in Safari and return to the app")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                            .multilineTextAlignment(.center)
+                        Button("Cancel") {
+                            isLoggingIn = false
+                        }
+                        .buttonStyle(.bordered)
+                    }
                 } else {
                     Button("Login with AniList") {
                         startAniListLogin()
@@ -78,8 +88,20 @@ struct AccountView: View {
             }
         }
         .padding()
-        .onOpenURL { url in
-            handleRedirect(url: url)
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)) { _ in
+            // Reset loading state when app becomes active (user returns from Safari)
+            if isLoggingIn && !accessToken.isEmpty {
+                isLoggingIn = false
+                fetchProfile()
+            } else if isLoggingIn {
+                // Check if we've been waiting too long
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    if accessToken.isEmpty {
+                        errorMessage = "Login was cancelled or failed. Please try again."
+                        isLoggingIn = false
+                    }
+                }
+            }
         }
     }
     
@@ -88,42 +110,42 @@ struct AccountView: View {
         isLoggingIn = true
         let clientId = "27916" // AniList client ID
         let redirectUri = "anix://auth"
-        let urlString = "https://anilist.co/api/v2/oauth/authorize?client_id=\(clientId)&redirect_uri=\(redirectUri)&response_type=token"
-        if let url = URL(string: urlString) {
-#if canImport(UIKit)
-            UIApplication.shared.open(url)
-#endif
-        } else {
-            errorMessage = "Failed to create login URL."
-            isLoggingIn = false
-        }
-    }
-    
-    private func handleRedirect(url: URL) {
-        // Parse access_token from URL fragment
-        guard let fragment = url.fragment else {
-            errorMessage = "No token in redirect."
+        
+        // Properly encode the redirect URI
+        guard let encodedRedirectUri = redirectUri.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+            errorMessage = "Failed to encode redirect URI."
             isLoggingIn = false
             return
         }
-        let params = fragment.components(separatedBy: "&").reduce(into: [String: String]()) { dict, pair in
-            let parts = pair.components(separatedBy: "=")
-            if parts.count == 2 {
-                dict[parts[0]] = parts[1]
+        
+        let urlString = "https://anilist.co/api/v2/oauth/authorize?client_id=\(clientId)&redirect_uri=\(encodedRedirectUri)&response_type=token"
+        
+        guard let url = URL(string: urlString) else {
+            errorMessage = "Failed to create login URL."
+            isLoggingIn = false
+            return
+        }
+        
+#if canImport(UIKit)
+        DispatchQueue.main.async {
+            UIApplication.shared.open(url) { success in
+                DispatchQueue.main.async {
+                    if !success {
+                        self.errorMessage = "Failed to open Safari for login."
+                        self.isLoggingIn = false
+                    }
+                }
             }
         }
-        if let token = params["access_token"] {
-            accessToken = token
-            isLoggingIn = false
-            fetchProfile()
-        } else {
-            errorMessage = "Login failed: No access token."
-            isLoggingIn = false
-        }
+#else
+        errorMessage = "Login is only available on iOS devices."
+        isLoggingIn = false
+#endif
     }
     
     private func fetchProfile() {
         guard !accessToken.isEmpty else { return }
+        
         let url = URL(string: "https://graphql.anilist.co")!
         let query = """
         query { Viewer { name } }
@@ -131,37 +153,57 @@ struct AccountView: View {
         let json: [String: Any] = [
             "query": query
         ]
-        let body = try! JSONSerialization.data(withJSONObject: json)
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
-        request.httpBody = body
-        URLSession.shared.dataTask(with: request) { data, _, error in
-            guard let data = data else {
+        
+        do {
+            let body = try JSONSerialization.data(withJSONObject: json)
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+            request.httpBody = body
+            
+            URLSession.shared.dataTask(with: request) { data, response, error in
                 DispatchQueue.main.async {
-                    errorMessage = "Failed to fetch profile."
-                }
-                return
-            }
-            do {
-                if let json = try JSONSerialization.jsonObject(with: data) as? [String: Any],
-                   let dataDict = json["data"] as? [String: Any],
-                   let viewer = dataDict["Viewer"] as? [String: Any],
-                   let name = viewer["name"] as? String {
-                    DispatchQueue.main.async {
-                        userName = name
+                    if let error = error {
+                        self.errorMessage = "Network error: \(error.localizedDescription)"
+                        return
                     }
-                } else {
-                    DispatchQueue.main.async {
-                        errorMessage = "Failed to parse profile."
+                    
+                    guard let data = data else {
+                        self.errorMessage = "No data received from AniList."
+                        return
+                    }
+                    
+                    do {
+                        if let json = try JSONSerialization.jsonObject(with: data) as? [String: Any] {
+                            if let errors = json["errors"] as? [[String: Any]] {
+                                let errorMessages = errors.compactMap { $0["message"] as? String }
+                                self.errorMessage = "AniList error: \(errorMessages.joined(separator: ", "))"
+                                // Clear invalid token
+                                self.accessToken = ""
+                                return
+                            }
+                            
+                            if let dataDict = json["data"] as? [String: Any],
+                               let viewer = dataDict["Viewer"] as? [String: Any],
+                               let name = viewer["name"] as? String {
+                                self.userName = name
+                                self.errorMessage = nil
+                            } else {
+                                self.errorMessage = "Failed to parse profile data."
+                            }
+                        } else {
+                            self.errorMessage = "Invalid response format."
+                        }
+                    } catch {
+                        self.errorMessage = "Failed to parse response: \(error.localizedDescription)"
                     }
                 }
-            } catch {
-                DispatchQueue.main.async {
-                    errorMessage = "Error parsing profile."
-                }
+            }.resume()
+        } catch {
+            DispatchQueue.main.async {
+                self.errorMessage = "Failed to create request: \(error.localizedDescription)"
             }
-        }.resume()
+        }
     }
 } 
