@@ -7,31 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A01234567890ABCD /* AniXApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01234567890ABCE /* AniXApp.swift */; };
-		A01234567890ABCF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01234567890ABC0 /* ContentView.swift */; };
-		A01234567890ABC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A01234567890ABC2 /* Assets.xcassets */; };
-		A01234567890ABC3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01234567890ABC4 /* HomeView.swift */; };
-		A01234567890ABC5 /* AnimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01234567890ABC6 /* AnimeView.swift */; };
-		A01234567890ABC7 /* MangaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01234567890ABC8 /* MangaView.swift */; };
-		A01234567890ABC9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01234567890ABCA /* SettingsView.swift */; };
-		A01234567890ABCB /* AniListAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01234567890ABCC /* AniListAPI.swift */; };
+		8A1234567890ABCD /* AniXApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1234567890ABCE /* AniXApp.swift */; };
+		8A1234567890ABCF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1234567890ABC0 /* ContentView.swift */; };
+		8A1234567890ABC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A1234567890ABC2 /* Assets.xcassets */; };
+		8A1234567890ABC3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1234567890ABC4 /* HomeView.swift */; };
+		8A1234567890ABC5 /* AnimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1234567890ABC6 /* AnimeView.swift */; };
+		8A1234567890ABC7 /* MangaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1234567890ABC8 /* MangaView.swift */; };
+		8A1234567890ABC9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1234567890ABCA /* SettingsView.swift */; };
+		8A1234567890ABCB /* AniListAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1234567890ABCC /* AniListAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A01234567890ABDD /* AniX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AniX.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A01234567890ABCE /* AniXApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AniXApp.swift; sourceTree = "<group>"; };
-		A01234567890ABC0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		A01234567890ABC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A01234567890ABC4 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		A01234567890ABC6 /* AnimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeView.swift; sourceTree = "<group>"; };
-		A01234567890ABC8 /* MangaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangaView.swift; sourceTree = "<group>"; };
-		A01234567890ABCA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		A01234567890ABCC /* AniListAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AniListAPI.swift; sourceTree = "<group>"; };
-		A01234567890ABEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A1234567890ABCD /* AniX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AniX.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A1234567890ABCE /* AniXApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AniXApp.swift; sourceTree = "<group>"; };
+		8A1234567890ABC0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8A1234567890ABC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8A1234567890ABC4 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		8A1234567890ABC6 /* AnimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeView.swift; sourceTree = "<group>"; };
+		8A1234567890ABC8 /* MangaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangaView.swift; sourceTree = "<group>"; };
+		8A1234567890ABCA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		8A1234567890ABCC /* AniListAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AniListAPI.swift; sourceTree = "<group>"; };
+		8A1234567890ABDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A01234567890ABDA /* Frameworks */ = {
+		8A1234567890ABDA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,34 +41,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A01234567890ABD0 = {
+		8A1234567890ABD0 = {
 			isa = PBXGroup;
 			children = (
-				A01234567890ABD1 /* AniX */,
-				A01234567890ABD2 /* Products */,
+				8A1234567890ABD1 /* AniX */,
+				8A1234567890ABD2 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		A01234567890ABD1 /* AniX */ = {
+		8A1234567890ABD1 /* AniX */ = {
 			isa = PBXGroup;
 			children = (
-				A01234567890ABCE /* AniXApp.swift */,
-				A01234567890ABC0 /* ContentView.swift */,
-				A01234567890ABC4 /* HomeView.swift */,
-				A01234567890ABC6 /* AnimeView.swift */,
-				A01234567890ABC8 /* MangaView.swift */,
-				A01234567890ABCA /* SettingsView.swift */,
-				A01234567890ABCC /* AniListAPI.swift */,
-				A01234567890ABC2 /* Assets.xcassets */,
-				A01234567890ABEE /* Info.plist */,
+				8A1234567890ABCE /* AniXApp.swift */,
+				8A1234567890ABC0 /* ContentView.swift */,
+				8A1234567890ABC4 /* HomeView.swift */,
+				8A1234567890ABC6 /* AnimeView.swift */,
+				8A1234567890ABC8 /* MangaView.swift */,
+				8A1234567890ABCA /* SettingsView.swift */,
+				8A1234567890ABCC /* AniListAPI.swift */,
+				8A1234567890ABC2 /* Assets.xcassets */,
+				8A1234567890ABDD /* Info.plist */,
 			);
 			path = AniX;
 			sourceTree = "<group>";
 		};
-		A01234567890ABD2 /* Products */ = {
+		8A1234567890ABD2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A01234567890ABDD /* AniX.app */,
+				8A1234567890ABCD /* AniX.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -76,13 +76,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A01234567890ABDC /* AniX */ = {
+		8A1234567890ABDC /* AniX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A01234567890ABEB /* Build configuration list for PBXNativeTarget "AniX" */;
+			buildConfigurationList = 8A1234567890ABEB /* Build configuration list for PBXNativeTarget "AniX" */;
 			buildPhases = (
-				A01234567890ABD9 /* Sources */,
-				A01234567890ABDA /* Frameworks */,
-				A01234567890ABDB /* Resources */,
+				8A1234567890ABD9 /* Sources */,
+				8A1234567890ABDA /* Frameworks */,
+				8A1234567890ABDB /* Resources */,
 			);
 			buildRules = (
 			);
@@ -90,25 +90,25 @@
 			);
 			name = AniX;
 			productName = AniX;
-			productReference = A01234567890ABDD /* AniX.app */;
+			productReference = 8A1234567890ABCD /* AniX.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		A01234567890ABD8 /* Project object */ = {
+		8A1234567890ABD8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
-					A01234567890ABDC = {
+					8A1234567890ABDC = {
 						CreatedOnToolsVersion = 15.0;
 					};
 				};
 			};
-			buildConfigurationList = A01234567890ABEF /* Build configuration list for PBXProject "AniX" */;
+			buildConfigurationList = 8A1234567890ABDB /* Build configuration list for PBXProject "AniX" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -116,46 +116,46 @@
 				en,
 				Base,
 			);
-			mainGroup = A01234567890ABD0;
-			productRefGroup = A01234567890ABD2 /* Products */;
+			mainGroup = 8A1234567890ABD0;
+			productRefGroup = 8A1234567890ABD2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A01234567890ABDC /* AniX */,
+				8A1234567890ABDC /* AniX */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		A01234567890ABDB /* Resources */ = {
+		8A1234567890ABDB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A01234567890ABC1 /* Assets.xcassets in Resources */,
+				8A1234567890ABC1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A01234567890ABD9 /* Sources */ = {
+		8A1234567890ABD9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A01234567890ABCF /* ContentView.swift in Sources */,
-				A01234567890ABC3 /* HomeView.swift in Sources */,
-				A01234567890ABC5 /* AnimeView.swift in Sources */,
-				A01234567890ABC7 /* MangaView.swift in Sources */,
-				A01234567890ABC9 /* SettingsView.swift in Sources */,
-				A01234567890ABCB /* AniListAPI.swift in Sources */,
-				A01234567890ABCD /* AniXApp.swift in Sources */,
+				8A1234567890ABCF /* ContentView.swift in Sources */,
+				8A1234567890ABC3 /* HomeView.swift in Sources */,
+				8A1234567890ABC5 /* AnimeView.swift in Sources */,
+				8A1234567890ABC7 /* MangaView.swift in Sources */,
+				8A1234567890ABC9 /* SettingsView.swift in Sources */,
+				8A1234567890ABCB /* AniListAPI.swift in Sources */,
+				8A1234567890ABCD /* AniXApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		A01234567890ABE9 /* Debug */ = {
+		8A1234567890ABE9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -218,7 +218,7 @@
 			};
 			name = Debug;
 		};
-		A01234567890ABEA /* Release */ = {
+		8A1234567890ABEA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -234,7 +234,7 @@
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_IMPLEMENTATION_USAGE = YES_ERROR;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
@@ -274,7 +274,7 @@
 			};
 			name = Release;
 		};
-		A01234567890ABEC /* Debug */ = {
+		8A1234567890ABEC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -284,7 +284,7 @@
 				DEVELOPMENT_ASSET_PATHS = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = AniX/Info.plist;
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -303,7 +303,7 @@
 			};
 			name = Debug;
 		};
-		A01234567890ABED /* Release */ = {
+		8A1234567890ABED /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -313,7 +313,7 @@
 				DEVELOPMENT_ASSET_PATHS = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = AniX/Info.plist;
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -335,25 +335,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A01234567890ABEF /* Build configuration list for PBXProject "AniX" */ = {
+		8A1234567890ABDB /* Build configuration list for PBXProject "AniX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A01234567890ABE9 /* Debug */,
-				A01234567890ABEA /* Release */,
+				8A1234567890ABE9 /* Debug */,
+				8A1234567890ABEA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A01234567890ABEB /* Build configuration list for PBXNativeTarget "AniX" */ = {
+		8A1234567890ABEB /* Build configuration list for PBXNativeTarget "AniX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A01234567890ABEC /* Debug */,
-				A01234567890ABED /* Release */,
+				8A1234567890ABEC /* Debug */,
+				8A1234567890ABED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = A01234567890ABD8 /* Project object */;
+	rootObject = 8A1234567890ABD8 /* Project object */;
 }
